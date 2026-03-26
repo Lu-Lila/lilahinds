@@ -67,6 +67,10 @@ Since there was no existing brand, I built one from scratch.
 - Neutral backgrounds to reduce visual noise
 - Consistent typography for readability
 
+![Serve513 — Website Hero](/images/serve513/website-hero.png)
+
+![Serve513 — Website Homepage](/images/serve513/website-homepage.png)
+
 ### 2. Information Architecture
 
 I structured the app into core areas: Dashboard, Events, Activity Tracking, and User Profile.
@@ -97,6 +101,8 @@ To ensure scalability, I created a component-based system including cards (event
 
 This allowed consistency across screens, faster future design updates, and easier developer handoff.
 
+![Serve513 — Website We Serve Section](/images/serve513/website-we-serve.png)
+
 ### 6. Dashboard Design (Core Feature)
 
 The dashboard was the most important part of the experience.
@@ -104,6 +110,10 @@ The dashboard was the most important part of the experience.
 **Goals:** Show key data at a glance, allow quick actions, and avoid overwhelming the user.
 
 **Design choices:** Grouped information into sections, used visual hierarchy to guide attention, and balanced data with whitespace.
+
+![Serve513 — Dashboard with Stations and Volunteers](/images/serve513/dashboard-stations.png)
+
+![Serve513 — Analytics Dashboard](/images/serve513/analytics-dashboard.png)
 
 ### 7. Designing for Usability
 
@@ -118,6 +128,28 @@ To keep the experience intuitive:
 - Readable font sizes
 - Clear button states
 - Logical navigation flow
+
+## Key Screens
+
+### Event Dashboard
+
+The event dashboard provides administrators with a comprehensive view of all events, including status, dates, locations, and team assignments — all in a clean, scannable table layout.
+
+![Serve513 — Event Dashboard](/images/serve513/event-dashboard.png)
+
+### Create & Edit Events
+
+The event creation flow allows organizers to set up events with scheduling, location, team members, guest invitations, available services, and reminders — all in a structured two-column layout.
+
+![Serve513 — Create Event](/images/serve513/create-event.png)
+
+![Serve513 — Edit Event](/images/serve513/edit-event.png)
+
+### Welcome Station
+
+The welcome station screen serves as the check-in point, capturing guest information, service selections, and clothing needs with real-time station queue visibility.
+
+![Serve513 — Welcome Station](/images/serve513/welcome-station.png)
 
 ## Final Solution
 
