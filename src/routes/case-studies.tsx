@@ -15,16 +15,21 @@ function CaseStudies() {
   return (
     <div className="min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-        <div className="max-w-2xl mb-10">
-          <h1 className="text-4xl font-bold text-warm-900 mb-3">Case Studies</h1>
-          <p className="text-warm-700 leading-relaxed">
-            A selection of projects exploring UI/UX design, branding, and
-            digital experiences. Each case study reflects my process from
-            research through final design.
+        <div className="max-w-2xl mb-12">
+          <p className="text-sm font-semibold text-primary/70 uppercase tracking-wider mb-3">
+            Selected Work
+          </p>
+          <h1 className="text-4xl font-bold text-warm-900 mb-4">
+            Case Studies
+          </h1>
+          <p className="text-warm-700 leading-relaxed text-lg">
+            A closer look at projects spanning UI/UX design, brand identity, and
+            digital product design — from research and strategy through final
+            execution.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           {allProjects.map((project, index) => {
             const isExpanded = expandedProject === project._meta.path
             return (
@@ -34,18 +39,16 @@ function CaseStudies() {
               >
                 <CardHeader className="pb-3">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-semibold text-primary/70 uppercase tracking-wider">
-                        Case Study {String(index + 1).padStart(2, '0')}
-                      </span>
-                    </div>
+                    <span className="text-xs font-semibold text-primary/60 uppercase tracking-widest">
+                      Case Study {String(index + 1).padStart(2, '0')}
+                    </span>
                     <CardTitle className="text-2xl text-warm-900">
                       {project.title}
                     </CardTitle>
-                    <p className="text-warm-700 leading-relaxed">
+                    <p className="text-warm-600 leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 pt-1">
                       {project.tags.map((tag) => (
                         <Badge key={tag} variant="secondary">
                           {tag}
@@ -59,12 +62,14 @@ function CaseStudies() {
                     onClick={() =>
                       setExpandedProject(isExpanded ? null : project._meta.path)
                     }
-                    className="text-sm font-medium text-primary hover:underline mb-4 flex items-center gap-1.5"
+                    className="text-sm font-medium text-primary hover:text-primary/80 transition-colors mb-4 flex items-center gap-2"
                   >
                     <span
-                      className="inline-block transition-transform duration-200"
+                      className="inline-block transition-transform duration-200 text-xs"
                       style={{
-                        transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                        transform: isExpanded
+                          ? 'rotate(90deg)'
+                          : 'rotate(0deg)',
                       }}
                     >
                       ▶
@@ -73,7 +78,7 @@ function CaseStudies() {
                   </button>
                   {isExpanded && project.content && (
                     <div
-                      className="prose prose-sm sm:prose-base max-w-none mt-4 text-warm-700 prose-headings:text-warm-900 prose-headings:font-semibold prose-strong:text-warm-800 prose-h2:text-xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-3 prose-ul:my-3 prose-li:my-1 prose-p:my-3 prose-img:rounded-lg prose-img:shadow-md prose-img:my-6"
+                      className="prose prose-sm sm:prose-base max-w-none mt-6 pt-6 border-t border-border/40 text-warm-700 prose-headings:text-warm-900 prose-headings:font-semibold prose-strong:text-warm-800 prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-ul:my-3 prose-li:my-1 prose-p:my-3 prose-img:rounded-lg prose-img:shadow-md prose-img:my-8"
                       dangerouslySetInnerHTML={{
                         __html: marked(project.content),
                       }}
