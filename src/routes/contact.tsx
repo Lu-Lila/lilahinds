@@ -13,7 +13,7 @@ function Contact() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center max-w-md mx-auto px-4">
-          <div className="w-16 h-16 bg-rose-50 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-pastel-pink-light rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-pastel-pink/20">
             <Mail className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-2xl font-bold text-warm-900 mb-2">
@@ -24,7 +24,7 @@ function Contact() {
           </p>
           <button
             onClick={() => setSubmitted(false)}
-            className="px-6 py-2 bg-primary text-primary-foreground rounded-xl hover:opacity-90 transition-opacity"
+            className="px-6 py-2 bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
           >
             Send Another Message
           </button>
@@ -37,7 +37,8 @@ function Contact() {
     <div className="min-h-screen">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
         <h1 className="text-4xl font-bold text-warm-900 mb-3">Get in Touch</h1>
-        <p className="text-warm-700 mb-8 leading-relaxed">
+        <div className="w-16 h-0.5 bg-gradient-to-r from-pastel-pink via-pastel-lavender to-pastel-mint mb-6" />
+        <p className="text-warm-700 mb-8 leading-relaxed text-lg">
           Have a project in mind or want to collaborate? I'd love to hear from you.
         </p>
 
@@ -80,7 +81,7 @@ function Contact() {
               id="name"
               name="name"
               required
-              className="w-full px-4 py-2.5 border border-border rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-colors bg-white"
+              className="w-full px-4 py-2.5 border border-pastel-pink/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors bg-white/80 backdrop-blur-sm"
               placeholder="Your name"
             />
           </div>
@@ -97,7 +98,7 @@ function Contact() {
               id="email"
               name="email"
               required
-              className="w-full px-4 py-2.5 border border-border rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-colors bg-white"
+              className="w-full px-4 py-2.5 border border-pastel-pink/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors bg-white/80 backdrop-blur-sm"
               placeholder="your@email.com"
             />
           </div>
@@ -114,14 +115,14 @@ function Contact() {
               name="message"
               required
               rows={6}
-              className="w-full px-4 py-2.5 border border-border rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-colors bg-white resize-none"
+              className="w-full px-4 py-2.5 border border-pastel-pink/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors bg-white/80 backdrop-blur-sm resize-none"
               placeholder="Tell me about your project..."
             />
           </div>
 
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:opacity-90 transition-opacity font-medium"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-opacity font-medium shadow-lg shadow-primary/20"
           >
             <Send size={16} />
             Send Message

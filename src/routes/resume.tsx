@@ -21,11 +21,12 @@ function Resume() {
           <p className="text-lg text-warm-700">
             Experience, Education & Skills
           </p>
-          <Separator className="mt-8" />
+          <div className="w-24 h-0.5 bg-gradient-to-r from-pastel-pink via-pastel-lavender to-pastel-mint mx-auto mt-6" />
         </div>
 
         {/* Summary */}
-        <Card className="border-border/50">
+        <Card className="border-white/60 bg-white/80 backdrop-blur-sm overflow-hidden">
+          <div className="h-1 bg-gradient-to-r from-pastel-pink to-pastel-lavender" />
           <CardHeader>
             <CardTitle className="text-2xl text-warm-900">
               Summary
@@ -42,11 +43,14 @@ function Resume() {
                 cross-functional stakeholders. Looking to contribute design
                 thinking and visual storytelling to impactful projects.
               </p>
-              <img
-                src="/headshot-on-white.jpg"
-                alt="Lila Hinds"
-                className="w-36 h-44 rounded-2xl object-cover shadow-sm"
-              />
+              <div className="relative">
+                <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-pastel-pink/40 to-pastel-mint/40 blur-sm" />
+                <img
+                  src="/headshot-on-white.jpg"
+                  alt="Lila Hinds"
+                  className="relative w-36 h-44 rounded-2xl object-cover shadow-sm"
+                />
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -58,7 +62,7 @@ function Resume() {
           </h2>
           <div className="space-y-6">
             {allJobs.map((job) => (
-              <Card key={job.jobTitle} className="border-border/50">
+              <Card key={job.jobTitle} className="border-white/60 bg-white/80 backdrop-blur-sm">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-2">
                     <div className="space-y-1">
@@ -69,7 +73,7 @@ function Resume() {
                         {job.company} — {job.location}
                       </p>
                     </div>
-                    <Badge variant="secondary" className="text-sm w-fit">
+                    <Badge variant="secondary" className="text-sm w-fit rounded-full">
                       {new Date(job.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                       {' — '}
                       {job.endDate
@@ -84,7 +88,7 @@ function Resume() {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {job.tags.map((tag) => (
-                      <Badge key={tag} variant="outline">
+                      <Badge key={tag} variant="outline" className="rounded-full">
                         {tag}
                       </Badge>
                     ))}
@@ -108,14 +112,15 @@ function Resume() {
           <h2 className="text-3xl font-semibold text-warm-900">
             Skills
           </h2>
-          <Card className="border-border/50">
+          <Card className="border-white/60 bg-white/80 backdrop-blur-sm overflow-hidden">
+            <div className="h-1 bg-gradient-to-r from-pastel-mint to-pastel-teal" />
             <CardContent className="pt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="font-semibold text-warm-900 mb-3">Design Tools</h3>
                   <div className="flex flex-wrap gap-2">
                     {['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe InDesign', 'Canva'].map((skill) => (
-                      <Badge key={skill} variant="secondary">{skill}</Badge>
+                      <Badge key={skill} variant="secondary" className="rounded-full">{skill}</Badge>
                     ))}
                   </div>
                 </div>
@@ -123,7 +128,7 @@ function Resume() {
                   <h3 className="font-semibold text-warm-900 mb-3">Design Skills</h3>
                   <div className="flex flex-wrap gap-2">
                     {['UI Design', 'UX Research', 'Wireframing', 'Prototyping', 'Brand Identity', 'Typography'].map((skill) => (
-                      <Badge key={skill} variant="secondary">{skill}</Badge>
+                      <Badge key={skill} variant="secondary" className="rounded-full">{skill}</Badge>
                     ))}
                   </div>
                 </div>
@@ -131,7 +136,7 @@ function Resume() {
                   <h3 className="font-semibold text-warm-900 mb-3">UX Methods</h3>
                   <div className="flex flex-wrap gap-2">
                     {['User Research', 'Persona Mapping', 'Usability Testing', 'Information Architecture', 'Accessibility'].map((skill) => (
-                      <Badge key={skill} variant="secondary">{skill}</Badge>
+                      <Badge key={skill} variant="secondary" className="rounded-full">{skill}</Badge>
                     ))}
                   </div>
                 </div>
@@ -139,7 +144,7 @@ function Resume() {
                   <h3 className="font-semibold text-warm-900 mb-3">Soft Skills</h3>
                   <div className="flex flex-wrap gap-2">
                     {['Stakeholder Communication', 'Iterative Feedback', 'Collaboration', 'Attention to Detail', 'Storytelling'].map((skill) => (
-                      <Badge key={skill} variant="secondary">{skill}</Badge>
+                      <Badge key={skill} variant="secondary" className="rounded-full">{skill}</Badge>
                     ))}
                   </div>
                 </div>
@@ -155,7 +160,7 @@ function Resume() {
           </h2>
           <div className="space-y-6">
             {allEducations.map((education) => (
-              <Card key={education.school} className="border-border/50">
+              <Card key={education.school} className="border-white/60 bg-white/80 backdrop-blur-sm">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-2">
                     <div>
@@ -164,7 +169,7 @@ function Resume() {
                       </CardTitle>
                       <p className="text-warm-700 mt-1">{education.summary}</p>
                     </div>
-                    <Badge variant="secondary" className="text-sm w-fit">
+                    <Badge variant="secondary" className="text-sm w-fit rounded-full">
                       {new Date(education.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                       {' — '}
                       {education.endDate
@@ -176,7 +181,7 @@ function Resume() {
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {education.tags.map((tag) => (
-                      <Badge key={tag} variant="outline">
+                      <Badge key={tag} variant="outline" className="rounded-full">
                         {tag}
                       </Badge>
                     ))}
