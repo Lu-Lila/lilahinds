@@ -71,6 +71,10 @@ The core journey follows: **Landing → Understanding → Trust → Action**
 - **About Section** — Building credibility and human connection
 - **Final CTA** — Reinforcing action with clear next steps
 
+The full homepage design demonstrates this flow in action — from the warm, confident hero through services, about, mission, and contact sections:
+
+![Lux HR — Full Homepage Design](/images/lux-hr/full-page.png)
+
 ### 5. Wireframing
 
 Structured layouts focused on clear hierarchy, readable spacing, and section-based storytelling.
@@ -81,6 +85,10 @@ Key decisions:
 - Repeated CTA placement throughout
 
 ### 6. Visual Design System
+
+The services section showcases the card-based layout with clear categorization — Small to Mid Sized Business Support, Team Development, and Special Projects — each with a direct "Work With Us" CTA:
+
+![Lux HR — Services Section](/images/lux-hr/services.png)
 
 **Color Palette:** Warm neutrals (browns, creams) chosen for trust, stability, and approachability.
 
@@ -100,6 +108,10 @@ Instead of a single CTA, strategic repetition was used:
 - Footer → "Let's Talk"
 
 This ensures users can act at any point in their journey.
+
+The dedicated services page extends this approach with tiered consulting packages — Entry Level, Mid Level, and Premium Plan — giving users clear options based on their needs:
+
+![Lux HR — Services Page](/images/lux-hr/info-page.png)
 
 ## Final Solution
 
