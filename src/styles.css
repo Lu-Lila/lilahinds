@@ -127,3 +127,74 @@ code {
     @apply bg-background text-foreground;
   }
 }
+
+/* Case study content styling */
+.case-study-content h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-warm-900);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-pastel-pink);
+  letter-spacing: -0.01em;
+}
+
+.case-study-content h2:first-child {
+  margin-top: 0;
+}
+
+.case-study-content h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-warm-800);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.case-study-content p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+}
+
+.case-study-content strong {
+  color: var(--color-warm-800);
+  font-weight: 600;
+}
+
+.case-study-content ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.case-study-content li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.65;
+}
+
+.case-study-content img {
+  display: block;
+  max-width: 75%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 640px) {
+  .case-study-content img {
+    max-width: 100%;
+  }
+}
+
+.case-study-content em {
+  font-style: italic;
+  color: var(--color-warm-700);
+}

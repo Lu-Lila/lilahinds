@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { allProjects } from 'content-collections'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { marked } from 'marked'
 import { useState } from 'react'
@@ -16,12 +15,20 @@ const accentColors = [
   'from-pastel-peach to-pastel-pink',
 ]
 
+const accentDots = [
+  'bg-pastel-pink',
+  'bg-pastel-mint',
+  'bg-pastel-lavender',
+  'bg-pastel-peach',
+]
+
 function CaseStudies() {
   const [expandedProject, setExpandedProject] = useState<string | null>(null)
 
   return (
     <div className="min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        {/* Page header */}
         <div className="max-w-2xl mb-16">
           <p className="text-sm font-semibold text-primary/70 uppercase tracking-widest mb-3">
             Selected Work
@@ -37,65 +44,84 @@ function CaseStudies() {
           </p>
         </div>
 
-        <div className="space-y-10">
+        {/* Case study list */}
+        <div className="space-y-16">
           {allProjects.map((project, index) => {
             const isExpanded = expandedProject === project._meta.path
+            const colorIndex = index % accentColors.length
             return (
-              <Card
-                key={project._meta.path}
-                className="overflow-hidden border-white/60 bg-white/80 backdrop-blur-sm hover:shadow-xl hover:shadow-pastel-pink/10 transition-all duration-300"
-              >
-                {/* Gradient accent bar */}
-                <div className={`h-1.5 bg-gradient-to-r ${accentColors[index % accentColors.length]}`} />
-                <CardHeader className="pb-3">
-                  <div className="space-y-3">
-                    <span className="text-xs font-semibold text-primary/60 uppercase tracking-widest">
-                      Case Study {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <CardTitle className="text-2xl text-warm-900">
+              <article key={project._meta.path}>
+                {/* Case study card */}
+                <div className="rounded-2xl overflow-hidden border border-white/60 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-lg hover:shadow-pastel-pink/10 transition-all duration-300">
+                  {/* Gradient accent bar */}
+                  <div
+                    className={`h-1 bg-gradient-to-r ${accentColors[colorIndex]}`}
+                  />
+
+                  <div className="p-6 sm:p-8">
+                    {/* Top row: number + tags */}
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <span
+                        className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold text-white ${accentDots[colorIndex]}`}
+                      >
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.tags.map((tag) => (
+                          <Badge
+                            key={tag}
+                            variant="secondary"
+                            className="rounded-full text-xs px-2.5 py-0.5"
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h2 className="text-2xl sm:text-3xl font-bold text-warm-900 mb-3">
                       {project.title}
-                    </CardTitle>
-                    <p className="text-warm-700 leading-relaxed">
+                    </h2>
+
+                    {/* Description */}
+                    <p className="text-warm-700 leading-relaxed max-w-3xl mb-5">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 pt-1">
-                      {project.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="rounded-full">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <button
-                    onClick={() =>
-                      setExpandedProject(isExpanded ? null : project._meta.path)
-                    }
-                    className="text-sm font-medium text-primary hover:text-primary/80 transition-colors mb-4 flex items-center gap-2"
-                  >
-                    <span
-                      className="inline-block transition-transform duration-200 text-xs"
-                      style={{
-                        transform: isExpanded
-                          ? 'rotate(90deg)'
-                          : 'rotate(0deg)',
-                      }}
+
+                    {/* Expand toggle */}
+                    <button
+                      onClick={() =>
+                        setExpandedProject(
+                          isExpanded ? null : project._meta.path,
+                        )
+                      }
+                      className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
                     >
-                      ▶
-                    </span>
-                    {isExpanded ? 'Hide details' : 'Read full case study'}
-                  </button>
+                      <span
+                        className={`inline-flex items-center justify-center w-6 h-6 rounded-full border border-primary/30 group-hover:border-primary/50 transition-all duration-200 text-[10px] ${isExpanded ? 'rotate-90' : ''}`}
+                      >
+                        ▶
+                      </span>
+                      {isExpanded ? 'Hide case study' : 'Read case study'}
+                    </button>
+                  </div>
+
+                  {/* Expanded case study content */}
                   {isExpanded && project.content && (
-                    <div
-                      className="prose prose-sm sm:prose-base max-w-none mt-6 pt-6 border-t border-pastel-pink/30 text-warm-700 prose-headings:text-warm-900 prose-headings:font-semibold prose-strong:text-warm-800 prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-ul:my-3 prose-li:my-1 prose-p:my-3 prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8"
-                      dangerouslySetInnerHTML={{
-                        __html: marked(project.content),
-                      }}
-                    />
+                    <div className="border-t border-pastel-pink/20">
+                      <div className="p-6 sm:p-8 lg:p-10">
+                        <div
+                          className="case-study-content max-w-none text-warm-700"
+                          dangerouslySetInnerHTML={{
+                            __html: marked(project.content),
+                          }}
+                        />
+                      </div>
+                    </div>
                   )}
-                </CardContent>
-              </Card>
+                </div>
+              </article>
             )
           })}
         </div>
