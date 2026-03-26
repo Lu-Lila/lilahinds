@@ -106,6 +106,46 @@ I focused on warm visuals, human-centered imagery, and conversational tone. This
 
 The brand system was designed to work across website, social media, print materials, and future campaigns.
 
+## Website Design
+
+The website was designed to reflect the brand's warm, community-driven identity across every page.
+
+### Home Page
+
+The home page creates an immediate emotional connection with bold visuals and clear messaging that invites visitors into the community.
+
+![Say Hello Neighbor — Home Page](/images/say-hello-neighbor/Home.png)
+
+### About Us
+
+The About Us page tells the story behind the initiative, building trust and connection through human-centered content.
+
+![Say Hello Neighbor — About Us](/images/say-hello-neighbor/About%20Us.png)
+
+### Projects
+
+The Projects page showcases community initiatives using a card-based layout for easy scanning and engagement.
+
+![Say Hello Neighbor — Projects](/images/say-hello-neighbor/Projects.png)
+
+### Project Page
+
+Individual project pages use image-driven storytelling to highlight impact and encourage participation.
+
+![Say Hello Neighbor — Project Page](/images/say-hello-neighbor/Project%20Page.png)
+
+### Donate
+
+The Donate page is designed with a clear call to action, making it simple for supporters to contribute.
+
+![Say Hello Neighbor — Donate](/images/say-hello-neighbor/Donate.png)
+
+### Contact
+
+The Contact page keeps things simple and accessible, inviting visitors to reach out and get involved.
+
+![Say Hello Neighbor — Contact](/images/say-hello-neighbor/Contact.png)
+
 ## Final Solution
 
 A complete brand ecosystem that includes a strong recognizable identity, a scalable brand system, a storytelling-driven website, and a consistent visual language.
