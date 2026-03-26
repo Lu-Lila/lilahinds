@@ -46,7 +46,7 @@ function Resume() {
               <div className="relative">
                 <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-pastel-pink/40 to-pastel-mint/40 blur-sm" />
                 <img
-                  src="/headshot-on-white.jpg"
+                  src="/headshot.png"
                   alt="Lila Hinds"
                   className="relative w-36 h-44 rounded-2xl object-cover shadow-sm"
                 />

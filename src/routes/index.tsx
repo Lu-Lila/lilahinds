@@ -58,7 +58,7 @@ function Home() {
             <div className="absolute -bottom-4 -left-4 w-36 h-36 rounded-full bg-pastel-pink/40 blur-sm" />
             <div className="relative w-64 h-72 md:w-72 md:h-80 rounded-3xl overflow-hidden shadow-xl shadow-pastel-pink/30 ring-4 ring-white/60">
               <img
-                src="/headshot-on-white.jpg"
+                src="/1000043748-ezremove.png"
                 alt="Lila Hinds"
                 className="w-full h-full object-cover"
               />
