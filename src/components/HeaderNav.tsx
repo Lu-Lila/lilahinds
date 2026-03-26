@@ -20,8 +20,8 @@ export function HeaderNav() {
           <Link
             key={link.to}
             to={link.to}
-            className="px-4 py-2 text-sm font-medium text-warm-700 hover:text-primary rounded-lg hover:bg-primary/5 transition-colors"
-            activeProps={{ className: 'text-primary bg-primary/5' }}
+            className="px-4 py-2 text-sm font-medium text-warm-700 hover:text-primary rounded-full hover:bg-pastel-pink-light transition-colors uppercase tracking-wide"
+            activeProps={{ className: 'text-primary bg-pastel-pink-light' }}
           >
             {link.label}
           </Link>
@@ -39,15 +39,15 @@ export function HeaderNav() {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white border-b border-border/50 shadow-sm md:hidden">
+        <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-pastel-pink/30 shadow-sm md:hidden">
           <nav className="flex flex-col p-4 gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className="px-4 py-3 text-sm font-medium text-warm-700 hover:text-primary rounded-lg hover:bg-primary/5 transition-colors"
-                activeProps={{ className: 'text-primary bg-primary/5' }}
+                className="px-4 py-3 text-sm font-medium text-warm-700 hover:text-primary rounded-xl hover:bg-pastel-pink-light transition-colors uppercase tracking-wide"
+                activeProps={{ className: 'text-primary bg-pastel-pink-light' }}
               >
                 {link.label}
               </Link>
