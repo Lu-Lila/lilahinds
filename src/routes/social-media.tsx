@@ -10,8 +10,8 @@ const pieces = [
   {
     title: 'Chanel Winter Campaign',
     description:
-      'A series of Instagram social posts designed for a luxury brand campaign, featuring product photography with seasonal winter theming and strong calls-to-action.',
-    tags: ['Social Media', 'Instagram', 'Luxury Branding'],
+      'A student mockup project (2025) — not affiliated with Chanel. A series of Instagram social posts designed for a fictional luxury brand campaign, featuring product photography with seasonal winter theming and strong calls-to-action.',
+    tags: ['Social Media', 'Instagram', 'Luxury Branding', 'Student Mockup'],
     type: 'image' as const,
     src: '/images/social-media/chanel-social-posts.png',
     span: 'md:col-span-2',
@@ -46,8 +46,8 @@ const pieces = [
   {
     title: 'Zoo Social Reel',
     description:
-      'A short-form video produced for social media, showcasing engaging zoo content designed to boost engagement and reach.',
-    tags: ['Video', 'Social Media', 'Short-Form'],
+      'A student mockup project (2025) — not affiliated with any zoo or organization. A short-form video produced for social media, showcasing engaging zoo content designed to boost engagement and reach.',
+    tags: ['Video', 'Social Media', 'Short-Form', 'Student Mockup'],
     type: 'video' as const,
     src: '/images/social-media/zoo-video.mp4',
     span: '',
@@ -55,8 +55,8 @@ const pieces = [
   {
     title: 'Spring Campaign Reel',
     description:
-      'A seasonal spring-themed social media video with vibrant visuals, crafted for brand storytelling and audience engagement.',
-    tags: ['Video', 'Social Media', 'Seasonal'],
+      'A student mockup project (2025) — not affiliated with any brand. A seasonal spring-themed social media video with vibrant visuals, crafted for brand storytelling and audience engagement.',
+    tags: ['Video', 'Social Media', 'Seasonal', 'Student Mockup'],
     type: 'video' as const,
     src: '/images/social-media/spring-video.mp4',
     span: '',
@@ -97,6 +97,15 @@ function SocialMedia() {
             materials — from Instagram post series and video reels to print
             collateral and nonprofit branding.
           </p>
+          <div className="mt-4 rounded-lg border border-pastel-lavender/40 bg-pastel-lavender/10 px-4 py-3">
+            <p className="text-warm-700 text-sm leading-relaxed">
+              <span className="font-semibold text-warm-900">Disclaimer:</span>{' '}
+              Some pieces in this portfolio — including the Chanel campaign, perfume
+              reel, and zoo ad — are student mockup projects completed in 2025.
+              They are not affiliated with, sponsored by, or endorsed by the
+              respective brands or organizations.
+            </p>
+          </div>
         </div>
 
         {/* Portfolio grid */}
