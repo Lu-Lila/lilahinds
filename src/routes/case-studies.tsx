@@ -3,6 +3,7 @@ import { allProjects } from 'content-collections'
 import { Badge } from '@/components/ui/badge'
 import { marked } from 'marked'
 import { useState } from 'react'
+import { ExternalLink } from 'lucide-react'
 
 export const Route = createFileRoute('/case-studies')({
   component: CaseStudies,
@@ -25,6 +26,12 @@ const accentDots = [
 function CaseStudies() {
   const [expandedProject, setExpandedProject] = useState<string | null>(null)
 
+  const sortedProjects = [...allProjects].sort((a, b) => {
+    const aIsCadre = a._meta.path === 'cadre-collaboration-platform' ? 1 : 0
+    const bIsCadre = b._meta.path === 'cadre-collaboration-platform' ? 1 : 0
+    return aIsCadre - bIsCadre
+  })
+
   return (
     <div className="min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
@@ -46,7 +53,7 @@ function CaseStudies() {
 
         {/* Case study list */}
         <div className="space-y-16">
-          {allProjects.map((project, index) => {
+          {sortedProjects.map((project, index) => {
             const isExpanded = expandedProject === project._meta.path
             const colorIndex = index % accentColors.length
             return (
@@ -89,35 +96,61 @@ function CaseStudies() {
                       {project.description}
                     </p>
 
-                    {/* Expand toggle */}
-                    <button
-                      onClick={() =>
-                        setExpandedProject(
-                          isExpanded ? null : project._meta.path,
-                        )
-                      }
-                      className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-                    >
-                      <span
-                        className={`inline-flex items-center justify-center w-6 h-6 rounded-full border border-primary/30 group-hover:border-primary/50 transition-all duration-200 text-[10px] ${isExpanded ? 'rotate-90' : ''}`}
+                    {/* Actions */}
+                    <div className="flex flex-wrap items-center gap-4">
+                      <button
+                        onClick={() =>
+                          setExpandedProject(
+                            isExpanded ? null : project._meta.path,
+                          )
+                        }
+                        className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
                       >
-                        ▶
-                      </span>
-                      {isExpanded ? 'Hide case study' : 'Read case study'}
-                    </button>
+                        <span
+                          className={`inline-flex items-center justify-center w-6 h-6 rounded-full border border-primary/30 group-hover:border-primary/50 transition-all duration-200 text-[10px] ${isExpanded ? 'rotate-90' : ''}`}
+                        >
+                          ▶
+                        </span>
+                        {isExpanded ? 'Hide case study' : 'Read case study'}
+                      </button>
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-pastel-lavender hover:text-primary transition-colors"
+                        >
+                          <ExternalLink size={14} />
+                          View Live Project
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   {/* Expanded case study content */}
-                  {isExpanded && project.content && (
+                  {isExpanded && (
                     <div className="border-t border-pastel-pink/20">
-                      <div className="p-6 sm:p-8 lg:p-10">
-                        <div
-                          className="case-study-content max-w-none text-warm-700"
-                          dangerouslySetInnerHTML={{
-                            __html: marked(project.content),
-                          }}
-                        />
-                      </div>
+                      {project.image && (
+                        <div className="px-6 pt-6 sm:px-8 sm:pt-8">
+                          <div className="rounded-xl overflow-hidden border border-white/40 shadow-sm">
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-auto object-cover"
+                            />
+                          </div>
+                        </div>
+                      )}
+                      {project.content && (
+                        <div className="p-6 sm:p-8 lg:p-10">
+                          <div
+                            className="case-study-content max-w-none text-warm-700"
+                            dangerouslySetInnerHTML={{
+                              __html: marked(project.content),
+                            }}
+                          />
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
