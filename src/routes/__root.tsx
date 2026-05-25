@@ -17,6 +17,13 @@ export const Route = createRootRoute({
         title: 'Lila Hinds — UI/UX & Branding Designer',
       },
     ],
+    links: [
+      {
+        rel: 'icon',
+        href: '/favicon.png',
+        type: 'image/png',
+      },
+    ],
   }),
   component: RootLayout,
   shellComponent: RootDocument,
