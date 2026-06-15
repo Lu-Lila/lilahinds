@@ -2,6 +2,7 @@
 title: "Say Hello Neighbor"
 description: "From concept to complete brand ecosystem — designing a visual identity system, brand guidelines, and a storytelling-driven responsive website for a community initiative."
 tags: ["Brand Design", "Web Design", "Brand Strategy", "Logo Design", "Community", "Storytelling"]
+liveUrl: "https://sayhelloneighbor.org/"
 ---
 
 ## The Challenge
