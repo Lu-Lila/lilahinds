@@ -2,6 +2,7 @@
 title: "Serve513"
 description: "Brand identity and scalable app design for a community engagement platform — from zero visual identity to a complete UI system with dashboards, event management, and mobile experiences."
 tags: ["UI/UX Design", "Brand Design", "App Design", "Dashboard Design", "Component Systems"]
+liveUrl: "https://sayhelloneighbor.org/content/serve513"
 ---
 
 ## The Challenge

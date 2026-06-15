@@ -2,6 +2,7 @@
 title: "Lux HR"
 description: "A human-centered website for an HR consultancy — turning complex services into a clear, trustworthy experience that drives client inquiries."
 tags: ["UI/UX Design", "Visual Design", "Web Design", "Conversion Strategy", "Figma"]
+liveUrl: "https://luxhrstrategies.app/"
 ---
 
 ## The Challenge
