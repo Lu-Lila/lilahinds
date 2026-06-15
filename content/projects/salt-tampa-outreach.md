@@ -2,6 +2,7 @@
 title: "Salt Tampa Outreach"
 description: "Redesigning a nonprofit website to lead with emotion and drive action — replacing an outdated, text-heavy site with a story-driven experience that increases donations and volunteer engagement."
 tags: ["UI/UX Design", "Nonprofit Design", "Web Redesign", "UX Research", "Accessibility", "Figma"]
+workInProgress: true
 ---
 
 ## The Challenge

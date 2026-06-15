@@ -3,7 +3,7 @@ import { allProjects } from 'content-collections'
 import { Badge } from '@/components/ui/badge'
 import { marked } from 'marked'
 import { useState } from 'react'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Clock } from 'lucide-react'
 
 export const Route = createFileRoute('/case-studies')({
   component: CaseStudies,
@@ -123,6 +123,12 @@ function CaseStudies() {
                           <ExternalLink size={14} />
                           View Live Project
                         </a>
+                      )}
+                      {!project.liveUrl && project.workInProgress && (
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-warm-500">
+                          <Clock size={14} />
+                          Work in Progress
+                        </span>
                       )}
                     </div>
                   </div>
