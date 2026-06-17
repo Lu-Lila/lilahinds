@@ -3,6 +3,7 @@ jobTitle: Marketing & Community Ambassador
 company: New Heart for Life
 location: Remote
 startDate: 2024-01-15
+endDate: 2026-06-30
 summary: Create digital content and campaigns to increase engagement, co-host virtual events, and contribute to branding and marketing strategy.
 tags:
   [
