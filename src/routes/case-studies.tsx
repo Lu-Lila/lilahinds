@@ -26,11 +26,25 @@ const accentDots = [
 function CaseStudies() {
   const [expandedProject, setExpandedProject] = useState<string | null>(null)
 
-  const sortedProjects = [...allProjects].sort((a, b) => {
-    const aIsCadre = a._meta.path === 'cadre-collaboration-platform' ? 1 : 0
-    const bIsCadre = b._meta.path === 'cadre-collaboration-platform' ? 1 : 0
-    return aIsCadre - bIsCadre
-  })
+  // Explicit display order for case studies. Paths not listed here fall to the
+  // end (before Cadre, which is always pinned last).
+  const projectOrder = [
+    'portfolio-site',
+    'nourishnet',
+    'salt-tampa-outreach',
+    'say-hello-neighbor',
+    'task-manager',
+    'cadre-collaboration-platform',
+  ]
+
+  const orderIndex = (path: string) => {
+    const i = projectOrder.indexOf(path)
+    return i === -1 ? projectOrder.length - 1 : i
+  }
+
+  const sortedProjects = [...allProjects].sort(
+    (a, b) => orderIndex(a._meta.path) - orderIndex(b._meta.path),
+  )
 
   return (
     <div className="min-h-screen">
