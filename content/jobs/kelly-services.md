@@ -3,6 +3,7 @@ jobTitle: Substitute Educator
 company: Kelly Services
 location: Brooksville, FL
 startDate: 2023-05-01
+endDate: 2026-01-31
 summary: Manage classroom environments while adapting to new settings, strengthening communication, problem-solving, and leadership skills.
 tags:
   [
