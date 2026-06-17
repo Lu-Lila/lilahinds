@@ -2,7 +2,7 @@
 jobTitle: Freelance UI/UX & Brand Designer
 company: Self-Employed
 location: Remote
-startDate: 2023-01-01
+startDate: 2024-01-01
 summary: Design and develop websites, mobile interfaces, and brand systems for clients across nonprofit, tech, and service industries.
 tags:
   [
